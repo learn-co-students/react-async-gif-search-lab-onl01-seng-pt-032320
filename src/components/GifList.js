@@ -4,13 +4,12 @@ class GifList extends Component {
 
     constructor(props) {
         super(props);
-        debugger
     }
     
 
   render() {
     return <div>
-    
+      {this.props.gifs.map(gif => <img key={gif} src={gif} alt="gif"/> )}
     </div>;
   }
 }

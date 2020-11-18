@@ -9,7 +9,8 @@ class GifListContainer extends Component {
         gifs: []
     }
 
-    getGifs(term='hello'){
+
+    getGifs = (term='hello') => {
         fetch(`https://api.giphy.com/v1/gifs/search?q=${term}E&api_key=dc6zaTOxFJmzC&rating=g&limit=3`)
         .then((resp) => resp.json())
         .then(({data}) =>{
@@ -17,20 +18,23 @@ class GifListContainer extends Component {
             this.setState({
             gifs: giflist
         })})
+    
     }
 
     componentDidMount() {
         this.getGifs()
     }
-    
-  render() {
-    return <div>
 
-    <GifSearch />
-    <GifList gifs={this.state.gifs}/>
-        
-    </div>;
-  }
+    
+    render() {
+        console.log(this.state.gifs)
+        return <div>
+        <GifSearch search={this.getGifs}/>
+        <GifList gifs={this.state.gifs}/>
+            
+        </div>;
+      }
+    
 }
 
 export default GifListContainer;
