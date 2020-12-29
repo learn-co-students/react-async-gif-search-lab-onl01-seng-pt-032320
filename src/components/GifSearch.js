@@ -1,5 +1,5 @@
 import React from 'react';
- 
+import GifListContainer from '../containers/GifListContainer'
 class GiftSearch extends React.Component {
   state = {
     input: ""
@@ -22,8 +22,7 @@ class GiftSearch extends React.Component {
           />
           <input type="submit"/>
         </form>
-
-        </div>
+      </div>
     )
   }
 }

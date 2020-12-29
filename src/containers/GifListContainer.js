@@ -2,6 +2,7 @@
 import React from 'react';
 import GiftList from '../components/GiftList';
 import GiftSearch from '../components/GiftSearch';
+import App from '../components/App'
 
  
 class GifListContainer extends React.Component {
@@ -15,18 +16,19 @@ class GifListContainer extends React.Component {
 
   handleOnSubmit = (event) => {
     const query = event.target.value 
-    
-  }
- 
-  componentDidMount() {
-    fetch('https://api.giphy.com/v1/gifs/search?q=&api_key=dc6zaTOxFJmzC&rating=g')
-      .then(response => response.json())
-      .then(giftData => this.setState({ gifts: giftData.gifts }))
-  }
+    fetch(`https://api.giphy.com/v1/gifs/search?q=${query}&api_key=dc6zaTOxFJmzC&rating=g`)
+    .then(response => response.json())
+    .then(giftData => {
+        debugger 
+        // this.setState({ gifts: giftData.gifts }))
+  })
+}
  
   render() {
-    return ( <GiftList gifts={this.state.gifts} />
-             <GiftSearch handleSubmit={this.handleOnSubmit} />
+    return ( <div>
+                <GiftList gifts={this.state.gifts} />
+                <GiftSearch handleSubmit={this.handleOnSubmit} />
+             </div>
     )
   }
 }

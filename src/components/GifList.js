@@ -1,6 +1,6 @@
 // src/GiftList.js
 import React from 'react';
-import GiftSearch from './GifSearch';
+import GifListContainer from '../containers/GifListContainer'
  
 const GiftList = ({ gifts }) => (
   <div className="gift-list">
