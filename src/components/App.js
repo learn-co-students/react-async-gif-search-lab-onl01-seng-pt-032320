@@ -1,5 +1,5 @@
 import React from 'react'
-import GifListContainer from '../containers/GifListContainer'
+import GifListContainer from '../containers/GifListContainer.js'
 
 import NavBar from './NavBar'
 

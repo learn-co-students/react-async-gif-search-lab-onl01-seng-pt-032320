@@ -1,6 +1,6 @@
 import React from 'react';
-import GifListContainer from '../containers/GifListContainer'
-class GiftSearch extends React.Component {
+import GifListContainer from '../containers/GifListContainer.js'
+class GifSearch extends React.Component {
   state = {
     input: ""
   }
@@ -27,4 +27,4 @@ class GiftSearch extends React.Component {
   }
 }
  
-export default GiftSearch;
+export default GifSearch;

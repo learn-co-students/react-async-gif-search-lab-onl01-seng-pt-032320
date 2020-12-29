@@ -1,11 +1,13 @@
 // src/GiftList.js
 import React from 'react';
-import GifListContainer from '../containers/GifListContainer'
+import GifListContainer from '../containers/GifListContainer.js'
  
-const GiftList = ({ gifts }) => (
-  <div className="gift-list">
-    { gifts.map(gift => <Book title={book.title} img_url={book.img_url} />) }
-  </div>
-)
+const GifList = ({ gifts }) => {
+    return (
+        <ul>
+            { gifts.map(gift => <li key={gift.id}>{gift.type} - <img src={gift.images.original.url} alt=""></img></li>) }
+        </ul>
+        )
+}
  
-export default BookList;
+export default GifList;
